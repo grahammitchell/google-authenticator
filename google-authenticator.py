@@ -37,7 +37,7 @@ def main():
 	with open('secrets.json', 'r') as f:
 		secrets = json.load(f)
 
-	for label, key in secrets.iteritems():
+	for label, key in sorted(secrets.iteritems()):
 		print "{}:\t{}".format(label, get_totp_token(key))
 
 
