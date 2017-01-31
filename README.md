@@ -13,6 +13,8 @@ The above QR Code is for the following URL:
 
 otpauth://totp/example.org:grahammitchell?secret=ABCDEFGHIJKLMNOP&issuer=example.org
 
+(generated using [this tool](https://dan.hersam.com/tools/gen-qr-code.html).)
+
 There's an "issuer" of example.org, a user of grahammitchell, and a "secret" of ABCDEFGHIJKLMNOP.
 
 The matches the provided secrets.json, so if you scan this QR code into your Google Authenticator app, it should produce the same codes as the provided source code.
