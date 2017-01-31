@@ -11,7 +11,7 @@ The included PNG is a QR code that encodes the following URL:
 
 otpauth://totp/example.org:grahammitchell?secret=ABCDEFGHIJKLMNOP&issuer=example.org
 
-(generated using [this tool](https://dan.hersam.com/tools/gen-qr-code.html).)
+(I generated the QR code using Dan Hersam's [QR Codes for Google Authenticator](https://dan.hersam.com/tools/gen-qr-code.html) generator thingy. Super helpful.)
 
 There's an "issuer" of example.org, a user of grahammitchell, and a "secret" of ABCDEFGHIJKLMNOP.
 
