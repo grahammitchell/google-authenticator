@@ -15,6 +15,8 @@ The included PNG is a QR code that encodes the following URL:
 
 There's an "issuer" of example.org, a user of grahammitchell, and a "secret" of ABCDEFGHIJKLMNOP.
 
+![QR code for secret](https://raw.githubusercontent.com/grahammitchell/google-authenticator/master/sample-secret-qr.png "sample secret")
+
 This matches the provided secrets.json, so if you scan this QR code into your Google Authenticator app, your app should then produce the same codes as the python script here!
 
 -Graham
