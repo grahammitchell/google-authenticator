@@ -6,8 +6,8 @@ def get_hotp_token(secret, intervals_no):
 	"""This is where the magic happens."""
 	key = base64.b32decode(normalize(secret), True) # True is to fold lower into uppercase
 	msg = struct.pack(">Q", intervals_no)
-	h = hmac.new(key, msg, hashlib.sha1).digest()
-	o = ord(h[19]) & 15
+	h = bytearray(hmac.new(key, msg, hashlib.sha1).digest())
+	o = h[19] & 15
 	h = str((struct.unpack(">I", h[o:o+4])[0] & 0x7fffffff) % 1000000)
 	return prefix0(h)
 
@@ -37,9 +37,8 @@ def main():
 	rel = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
 	with open(os.path.join(rel,'secrets.json'), 'r') as f:
 		secrets = json.load(f)
-
-	for label, key in sorted(secrets.iteritems()):
-		print "{}:\t{}".format(label, get_totp_token(key))
+	for label, key in sorted(list(secrets.items())):
+		print("{}:\t{}".format(label, get_totp_token(key)))
 
 
 if __name__ == "__main__":
